@@ -4,7 +4,7 @@
 #
 Name     : apr
 Version  : 1.5.2
-Release  : 9
+Release  : 10
 URL      : http://www.apache.org/dist/apr/apr-1.5.2.tar.gz
 Source0  : http://www.apache.org/dist/apr/apr-1.5.2.tar.gz
 Summary  : Apache Portable Runtime library
@@ -47,6 +47,7 @@ Group: Development
 Requires: apr-lib
 Requires: apr-bin
 Requires: apr-data
+Provides: apr-devel
 
 %description dev
 dev components for the apr package.
@@ -65,10 +66,17 @@ lib components for the apr package.
 %setup -q -n apr-1.5.2
 
 %build
+export AR=gcc-ar
+export RANLIB=gcc-ranlib
+export CFLAGS="$CFLAGS -O3 -fno-semantic-interposition -ffunction-sections -flto "
+export CXXFLAGS="$CXXFLAGS -O3 -fno-semantic-interposition -ffunction-sections -flto "
 %configure --disable-static --enable-nonportable-atomics   --enable-threads
-make V=1 %{?_smp_mflags}
+make V=1  %{?_smp_mflags}
 
 %check
+export http_proxy=http://127.0.0.1:9/
+export https_proxy=http://127.0.0.1:9/
+export no_proxy=localhost
 make TEST_VERBOSE=1 test
 
 %install
