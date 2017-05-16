@@ -4,7 +4,7 @@
 #
 Name     : apr
 Version  : 1.5.2
-Release  : 12
+Release  : 13
 URL      : http://www.apache.org/dist/apr/apr-1.5.2.tar.gz
 Source0  : http://www.apache.org/dist/apr/apr-1.5.2.tar.gz
 Summary  : Apache Portable Runtime library
