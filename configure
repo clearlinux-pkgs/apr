@@ -1,1 +1,1 @@
---enable-nonportable-atomics   --enable-threads
+--enable-nonportable-atomics   --enable-threads --with-devrandom=/dev/urandom

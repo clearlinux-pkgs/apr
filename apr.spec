@@ -6,7 +6,7 @@
 #
 Name     : apr
 Version  : 1.6.2
-Release  : 24
+Release  : 25
 URL      : http://www.apache.org/dist/apr/apr-1.6.2.tar.gz
 Source0  : http://www.apache.org/dist/apr/apr-1.6.2.tar.gz
 Source99 : http://www.apache.org/dist/apr/apr-1.6.2.tar.gz.asc
@@ -73,12 +73,15 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1497368726
-export CFLAGS="$CFLAGS -O3 -falign-functions=32 -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -falign-functions=32 -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -falign-functions=32 -fno-semantic-interposition "
-export CXXFLAGS="$CXXFLAGS -O3 -falign-functions=32 -fno-semantic-interposition "
-%configure --disable-static --enable-nonportable-atomics   --enable-threads
+export SOURCE_DATE_EPOCH=1502034090
+export AR=gcc-ar
+export RANLIB=gcc-ranlib
+export NM=gcc-nm
+export CFLAGS="$CFLAGS -O3 -falign-functions=32 -ffat-lto-objects -flto=4 -fno-semantic-interposition "
+export FCFLAGS="$CFLAGS -O3 -falign-functions=32 -ffat-lto-objects -flto=4 -fno-semantic-interposition "
+export FFLAGS="$CFLAGS -O3 -falign-functions=32 -ffat-lto-objects -flto=4 -fno-semantic-interposition "
+export CXXFLAGS="$CXXFLAGS -O3 -falign-functions=32 -ffat-lto-objects -flto=4 -fno-semantic-interposition "
+%configure --disable-static --enable-nonportable-atomics   --enable-threads --with-devrandom=/dev/urandom
 make V=1  %{?_smp_mflags}
 
 %check
@@ -89,7 +92,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make TEST_VERBOSE=1 test || :
 
 %install
-export SOURCE_DATE_EPOCH=1497368726
+export SOURCE_DATE_EPOCH=1502034090
 rm -rf %{buildroot}
 %make_install
 
