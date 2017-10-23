@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x8EFB19629088F565 (wrowe@apache.org)
 #
 Name     : apr
-Version  : 1.6.2
-Release  : 25
-URL      : http://www.apache.org/dist/apr/apr-1.6.2.tar.gz
-Source0  : http://www.apache.org/dist/apr/apr-1.6.2.tar.gz
-Source99 : http://www.apache.org/dist/apr/apr-1.6.2.tar.gz.asc
+Version  : 1.6.3
+Release  : 26
+URL      : http://www.apache.org/dist/apr/apr-1.6.3.tar.gz
+Source0  : http://www.apache.org/dist/apr/apr-1.6.3.tar.gz
+Source99 : http://www.apache.org/dist/apr/apr-1.6.3.tar.gz.asc
 Summary  : Apache Portable Runtime library
 Group    : Development/Tools
 License  : Apache-2.0 ISC NCSA
@@ -66,21 +66,21 @@ lib components for the apr package.
 
 
 %prep
-%setup -q -n apr-1.6.2
+%setup -q -n apr-1.6.3
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1502034090
+export SOURCE_DATE_EPOCH=1508725035
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -falign-functions=32 -ffat-lto-objects -flto=4 -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -falign-functions=32 -ffat-lto-objects -flto=4 -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -falign-functions=32 -ffat-lto-objects -flto=4 -fno-semantic-interposition "
-export CXXFLAGS="$CXXFLAGS -O3 -falign-functions=32 -ffat-lto-objects -flto=4 -fno-semantic-interposition "
+export CFLAGS="$CFLAGS -O3 -falign-functions=32 -ffat-lto-objects -flto=4 -fno-math-errno -fno-semantic-interposition -fno-trapping-math "
+export FCFLAGS="$CFLAGS -O3 -falign-functions=32 -ffat-lto-objects -flto=4 -fno-math-errno -fno-semantic-interposition -fno-trapping-math "
+export FFLAGS="$CFLAGS -O3 -falign-functions=32 -ffat-lto-objects -flto=4 -fno-math-errno -fno-semantic-interposition -fno-trapping-math "
+export CXXFLAGS="$CXXFLAGS -O3 -falign-functions=32 -ffat-lto-objects -flto=4 -fno-math-errno -fno-semantic-interposition -fno-trapping-math "
 %configure --disable-static --enable-nonportable-atomics   --enable-threads --with-devrandom=/dev/urandom
 make V=1  %{?_smp_mflags}
 
@@ -92,7 +92,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make TEST_VERBOSE=1 test || :
 
 %install
-export SOURCE_DATE_EPOCH=1502034090
+export SOURCE_DATE_EPOCH=1508725035
 rm -rf %{buildroot}
 %make_install
 
@@ -123,4 +123,4 @@ rm -rf %{buildroot}
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/libapr-1.so.0
-/usr/lib64/libapr-1.so.0.6.2
+/usr/lib64/libapr-1.so.0.6.3
