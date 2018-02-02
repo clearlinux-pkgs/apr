@@ -6,7 +6,7 @@
 #
 Name     : apr
 Version  : 1.6.3
-Release  : 26
+Release  : 27
 URL      : http://www.apache.org/dist/apr/apr-1.6.3.tar.gz
 Source0  : http://www.apache.org/dist/apr/apr-1.6.3.tar.gz
 Source99 : http://www.apache.org/dist/apr/apr-1.6.3.tar.gz.asc
