@@ -59,7 +59,6 @@ Configure miss: unix.h presence
 Configure miss: unix.h
 Configure miss: winsock2.h usability
 Configure miss: winsock2.h presence
-Configure miss: winsock2.h
 Configure miss: netinet/sctp.h usability
 Configure miss: netinet/sctp.h presence
 Configure miss: netinet/sctp.h
@@ -85,7 +84,6 @@ Configure miss: if fcntl locks affect threads in the same process
 Configure miss: if flock locks affect threads in the same process
 Configure miss: struct stat.st_atimensec
 Configure miss: struct stat.st_ctimensec
-Configure miss: struct stat.st_mtimensec
 Configure miss: struct stat.st_atime_n
 Configure miss: struct stat.st_ctime_n
 Configure miss: struct stat.st_mtime_n
