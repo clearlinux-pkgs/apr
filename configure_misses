@@ -3,7 +3,6 @@ Configure miss: whether to enable -D_LARGEFILE64_SOURCE
 Configure miss: main in -ltruerand
 Configure miss: whether pthread_getspecific takes two arguments
 Configure miss: whether pthread_attr_getdetachstate takes one argument
-Configure miss: readdir in -lc_r
 Configure miss: gethostbyname in -lc_r
 Configure miss: gethostbyaddr in -lc_r
 Configure miss: getservbyname in -lc_r
@@ -68,13 +67,14 @@ Configure miss: netinet/sctp_uio.h
 Configure miss: sys/syslimits.h usability
 Configure miss: sys/syslimits.h presence
 Configure miss: sys/syslimits.h
-Configure miss: whether ssize_t and int are the same
-Configure miss: whether size_t and unsigned int are the same
+Configure miss: whether int64_t and int use fmt %d
 Configure miss: Variable Length Arrays
 Configure miss: OS.h usability
 Configure miss: OS.h presence
 Configure miss: OS.h
 Configure miss: create_sem
+Configure miss: acquire_sem
+Configure miss: acquire_sem_etc
 Configure miss: union semun in sys/sem.h
 Configure miss: if fcntl returns EACCES when F_SETLK is already held
 Configure miss: if all interprocess locks affect threads
@@ -103,7 +103,6 @@ Configure miss: whether to enable -D_LARGEFILE64_SOURCE
 Configure miss: main in -ltruerand
 Configure miss: whether pthread_getspecific takes two arguments
 Configure miss: whether pthread_attr_getdetachstate takes one argument
-Configure miss: readdir in -lc_r
 Configure miss: gethostbyname in -lc_r
 Configure miss: gethostbyaddr in -lc_r
 Configure miss: getservbyname in -lc_r
@@ -168,13 +167,14 @@ Configure miss: netinet/sctp_uio.h
 Configure miss: sys/syslimits.h usability
 Configure miss: sys/syslimits.h presence
 Configure miss: sys/syslimits.h
-Configure miss: whether ssize_t and int are the same
-Configure miss: whether size_t and unsigned int are the same
+Configure miss: whether int64_t and int use fmt %d
 Configure miss: Variable Length Arrays
 Configure miss: OS.h usability
 Configure miss: OS.h presence
 Configure miss: OS.h
 Configure miss: create_sem
+Configure miss: acquire_sem
+Configure miss: acquire_sem_etc
 Configure miss: union semun in sys/sem.h
 Configure miss: if fcntl returns EACCES when F_SETLK is already held
 Configure miss: if all interprocess locks affect threads

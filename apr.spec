@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x1E1F909911C78735 (wrowe@apache.org)
 #
 Name     : apr
-Version  : 1.6.5
-Release  : 30
-URL      : http://www.apache.org/dist/apr/apr-1.6.5.tar.gz
-Source0  : http://www.apache.org/dist/apr/apr-1.6.5.tar.gz
-Source99 : http://www.apache.org/dist/apr/apr-1.6.5.tar.gz.asc
+Version  : 1.7.0
+Release  : 31
+URL      : http://www.apache.org/dist/apr/apr-1.7.0.tar.gz
+Source0  : http://www.apache.org/dist/apr/apr-1.7.0.tar.gz
+Source99 : http://www.apache.org/dist/apr/apr-1.7.0.tar.gz.asc
 Summary  : The Apache Portable Runtime
 Group    : Development/Tools
 License  : Apache-2.0 ISC
@@ -53,6 +53,7 @@ Requires: apr-lib = %{version}-%{release}
 Requires: apr-bin = %{version}-%{release}
 Requires: apr-data = %{version}-%{release}
 Provides: apr-devel = %{version}-%{release}
+Requires: apr = %{version}-%{release}
 
 %description dev
 dev components for the apr package.
@@ -77,9 +78,9 @@ license components for the apr package.
 
 
 %prep
-%setup -q -n apr-1.6.5
+%setup -q -n apr-1.7.0
 pushd ..
-cp -a apr-1.6.5 buildavx2
+cp -a apr-1.7.0 buildavx2
 popd
 
 %build
@@ -87,7 +88,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1548257595
+export SOURCE_DATE_EPOCH=1554471344
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
@@ -114,7 +115,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make TEST_VERBOSE=1 test || :
 
 %install
-export SOURCE_DATE_EPOCH=1548257595
+export SOURCE_DATE_EPOCH=1554471344
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/apr
 cp LICENSE %{buildroot}/usr/share/package-licenses/apr/LICENSE
@@ -133,9 +134,7 @@ popd
 
 %files data
 %defattr(-,root,root,-)
-/usr/share/build-1/apr_common.m4
 /usr/share/build-1/apr_rules.mk
-/usr/share/build-1/find_apr.m4
 /usr/share/build-1/libtool
 /usr/share/build-1/make_exports.awk
 /usr/share/build-1/make_var_export.awk
@@ -151,9 +150,9 @@ popd
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/haswell/libapr-1.so.0
-/usr/lib64/haswell/libapr-1.so.0.6.5
+/usr/lib64/haswell/libapr-1.so.0.7.0
 /usr/lib64/libapr-1.so.0
-/usr/lib64/libapr-1.so.0.6.5
+/usr/lib64/libapr-1.so.0.7.0
 
 %files license
 %defattr(0644,root,root,0755)
