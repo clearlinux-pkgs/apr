@@ -6,11 +6,11 @@
 #
 Name     : apr
 Version  : 1.7.0
-Release  : 32
+Release  : 33
 URL      : http://www.apache.org/dist/apr/apr-1.7.0.tar.gz
 Source0  : http://www.apache.org/dist/apr/apr-1.7.0.tar.gz
-Source99 : http://www.apache.org/dist/apr/apr-1.7.0.tar.gz.asc
-Summary  : The Apache Portable Runtime
+Source1  : http://www.apache.org/dist/apr/apr-1.7.0.tar.gz.asc
+Summary  : Apache Portable Runtime library
 Group    : Development/Tools
 License  : Apache-2.0 ISC
 Requires: apr-bin = %{version}-%{release}
@@ -79,6 +79,7 @@ license components for the apr package.
 
 %prep
 %setup -q -n apr-1.7.0
+cd %{_builddir}/apr-1.7.0
 pushd ..
 cp -a apr-1.7.0 buildavx2
 popd
@@ -87,14 +88,15 @@ popd
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1554471344
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1604536601
+export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
 export CFLAGS="$CFLAGS -O3 -falign-functions=32 -ffat-lto-objects -flto=4 -fno-math-errno -fno-semantic-interposition -fno-trapping-math "
-export FCFLAGS="$CFLAGS -O3 -falign-functions=32 -ffat-lto-objects -flto=4 -fno-math-errno -fno-semantic-interposition -fno-trapping-math "
-export FFLAGS="$CFLAGS -O3 -falign-functions=32 -ffat-lto-objects -flto=4 -fno-math-errno -fno-semantic-interposition -fno-trapping-math "
+export FCFLAGS="$FFLAGS -O3 -falign-functions=32 -ffat-lto-objects -flto=4 -fno-math-errno -fno-semantic-interposition -fno-trapping-math "
+export FFLAGS="$FFLAGS -O3 -falign-functions=32 -ffat-lto-objects -flto=4 -fno-math-errno -fno-semantic-interposition -fno-trapping-math "
 export CXXFLAGS="$CXXFLAGS -O3 -falign-functions=32 -ffat-lto-objects -flto=4 -fno-math-errno -fno-semantic-interposition -fno-trapping-math "
 %configure --disable-static --enable-nonportable-atomics   --enable-threads --with-devrandom=/dev/urandom
 make  %{?_smp_mflags}
@@ -103,22 +105,25 @@ unset PKG_CONFIG_PATH
 pushd ../buildavx2/
 export CFLAGS="$CFLAGS -m64 -march=haswell"
 export CXXFLAGS="$CXXFLAGS -m64 -march=haswell"
+export FFLAGS="$FFLAGS -m64 -march=haswell"
+export FCFLAGS="$FCFLAGS -m64 -march=haswell"
 export LDFLAGS="$LDFLAGS -m64 -march=haswell"
 %configure --disable-static --enable-nonportable-atomics   --enable-threads --with-devrandom=/dev/urandom
 make  %{?_smp_mflags}
 popd
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 make TEST_VERBOSE=1 test || :
 
 %install
-export SOURCE_DATE_EPOCH=1554471344
+export SOURCE_DATE_EPOCH=1604536601
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/apr
-cp LICENSE %{buildroot}/usr/share/package-licenses/apr/LICENSE
+cp %{_builddir}/apr-1.7.0/LICENSE %{buildroot}/usr/share/package-licenses/apr/2eae3e0a27a2e49e86a350c94513de0ddb1d2c98
+cp %{_builddir}/apr-1.7.0/NOTICE %{buildroot}/usr/share/package-licenses/apr/5d4e4cddd998a3f6e4603d6774c0cf766b317f26
 pushd ../buildavx2/
 %make_install_avx2
 popd
@@ -142,7 +147,47 @@ popd
 
 %files dev
 %defattr(-,root,root,-)
-/usr/include/*.h
+/usr/include/apr.h
+/usr/include/apr_allocator.h
+/usr/include/apr_atomic.h
+/usr/include/apr_cstr.h
+/usr/include/apr_dso.h
+/usr/include/apr_encode.h
+/usr/include/apr_env.h
+/usr/include/apr_errno.h
+/usr/include/apr_escape.h
+/usr/include/apr_file_info.h
+/usr/include/apr_file_io.h
+/usr/include/apr_fnmatch.h
+/usr/include/apr_general.h
+/usr/include/apr_getopt.h
+/usr/include/apr_global_mutex.h
+/usr/include/apr_hash.h
+/usr/include/apr_inherit.h
+/usr/include/apr_lib.h
+/usr/include/apr_mmap.h
+/usr/include/apr_network_io.h
+/usr/include/apr_perms_set.h
+/usr/include/apr_poll.h
+/usr/include/apr_pools.h
+/usr/include/apr_portable.h
+/usr/include/apr_proc_mutex.h
+/usr/include/apr_random.h
+/usr/include/apr_ring.h
+/usr/include/apr_shm.h
+/usr/include/apr_signal.h
+/usr/include/apr_skiplist.h
+/usr/include/apr_strings.h
+/usr/include/apr_support.h
+/usr/include/apr_tables.h
+/usr/include/apr_thread_cond.h
+/usr/include/apr_thread_mutex.h
+/usr/include/apr_thread_proc.h
+/usr/include/apr_thread_rwlock.h
+/usr/include/apr_time.h
+/usr/include/apr_user.h
+/usr/include/apr_version.h
+/usr/include/apr_want.h
 /usr/lib64/haswell/libapr-1.so
 /usr/lib64/libapr-1.so
 /usr/lib64/pkgconfig/apr-1.pc
@@ -156,4 +201,5 @@ popd
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/apr/LICENSE
+/usr/share/package-licenses/apr/2eae3e0a27a2e49e86a350c94513de0ddb1d2c98
+/usr/share/package-licenses/apr/5d4e4cddd998a3f6e4603d6774c0cf766b317f26

@@ -67,8 +67,7 @@ Configure miss: netinet/sctp_uio.h
 Configure miss: sys/syslimits.h usability
 Configure miss: sys/syslimits.h presence
 Configure miss: sys/syslimits.h
-Configure miss: whether int64_t and int use fmt %d
-Configure miss: Variable Length Arrays
+Configure miss: strtoi
 Configure miss: OS.h usability
 Configure miss: OS.h presence
 Configure miss: OS.h
@@ -92,7 +91,6 @@ Configure miss: uuid.h presence
 Configure miss: uuid.h
 Configure miss: library containing uuid_create
 Configure miss: uuid_create
-Configure miss: style of getservbyname_r routine
 Configure miss: if O_NONBLOCK setting is inherited from listening sockets
 Configure miss: TCP_NOPUSH in netinet/tcp.h
 Configure miss: SO_ACCEPTFILTER in sys/socket.h
@@ -167,8 +165,7 @@ Configure miss: netinet/sctp_uio.h
 Configure miss: sys/syslimits.h usability
 Configure miss: sys/syslimits.h presence
 Configure miss: sys/syslimits.h
-Configure miss: whether int64_t and int use fmt %d
-Configure miss: Variable Length Arrays
+Configure miss: strtoi
 Configure miss: OS.h usability
 Configure miss: OS.h presence
 Configure miss: OS.h
@@ -192,7 +189,6 @@ Configure miss: uuid.h presence
 Configure miss: uuid.h
 Configure miss: library containing uuid_create
 Configure miss: uuid_create
-Configure miss: style of getservbyname_r routine
 Configure miss: if O_NONBLOCK setting is inherited from listening sockets
 Configure miss: TCP_NOPUSH in netinet/tcp.h
 Configure miss: SO_ACCEPTFILTER in sys/socket.h
