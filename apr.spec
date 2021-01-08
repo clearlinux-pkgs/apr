@@ -6,7 +6,7 @@
 #
 Name     : apr
 Version  : 1.7.0
-Release  : 33
+Release  : 34
 URL      : http://www.apache.org/dist/apr/apr-1.7.0.tar.gz
 Source0  : http://www.apache.org/dist/apr/apr-1.7.0.tar.gz
 Source1  : http://www.apache.org/dist/apr/apr-1.7.0.tar.gz.asc
@@ -21,6 +21,7 @@ BuildRequires : buildreq-cmake
 BuildRequires : buildreq-configure
 BuildRequires : sed
 BuildRequires : util-linux-dev
+Patch1: 0001-Fix-apr-pkgconfig-to-add-a-dependency-on-libuuid.patch
 
 %description
 The mission of the Apache Portable Runtime (APR) is to provide a
@@ -80,6 +81,7 @@ license components for the apr package.
 %prep
 %setup -q -n apr-1.7.0
 cd %{_builddir}/apr-1.7.0
+%patch1 -p1
 pushd ..
 cp -a apr-1.7.0 buildavx2
 popd
@@ -89,7 +91,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1604536601
+export SOURCE_DATE_EPOCH=1610134551
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -119,7 +121,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make TEST_VERBOSE=1 test || :
 
 %install
-export SOURCE_DATE_EPOCH=1604536601
+export SOURCE_DATE_EPOCH=1610134551
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/apr
 cp %{_builddir}/apr-1.7.0/LICENSE %{buildroot}/usr/share/package-licenses/apr/2eae3e0a27a2e49e86a350c94513de0ddb1d2c98

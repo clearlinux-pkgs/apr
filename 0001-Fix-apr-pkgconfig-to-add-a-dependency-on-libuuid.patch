@@ -1,0 +1,24 @@
+From 4d815fb096df41429a19dd8abb1065d9e509d107 Mon Sep 17 00:00:00 2001
+From: Karthik Prabhu Vinod <karthik.prabhu.vinod@intel.com>
+Date: Thu, 7 Jan 2021 12:07:41 -0800
+Subject: [PATCH] Fix apr pkgconfig to add a dependency on libuuid
+
+Signed-off-by: Karthik Prabhu Vinod <karthik.prabhu.vinod@intel.com>
+---
+ apr.pc.in | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/apr.pc.in b/apr.pc.in
+index 318a81e..53f433c 100644
+--- a/apr.pc.in
++++ b/apr.pc.in
+@@ -7,5 +7,6 @@ includedir=@includedir@
+ Name: APR
+ Description: The Apache Portable Runtime library
+ Version: @APR_DOTTED_VERSION@
++Requires: uuid
+ Libs: -L${libdir} -l@APR_LIBNAME@ @EXTRA_LIBS@
+ Cflags: @EXTRA_CPPFLAGS@ @EXTRA_CFLAGS@ -I${includedir}
+-- 
+2.30.0
+
