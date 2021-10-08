@@ -1,196 +1,208 @@
-Configure miss: whether system uses EBCDIC
-Configure miss: whether to enable -D_LARGEFILE64_SOURCE
-Configure miss: main in -ltruerand
-Configure miss: whether pthread_getspecific takes two arguments
-Configure miss: whether pthread_attr_getdetachstate takes one argument
-Configure miss: gethostbyname in -lc_r
-Configure miss: gethostbyaddr in -lc_r
-Configure miss: getservbyname in -lc_r
-Configure miss: port_create
-Configure miss: asio -> message queue support
-Configure miss: sys/mutex.h usability
-Configure miss: sys/mutex.h presence
-Configure miss: sys/mutex.h
-Configure miss: kernel/OS.h usability
-Configure miss: kernel/OS.h presence
-Configure miss: kernel/OS.h
-Configure miss: os2.h usability
-Configure miss: os2.h presence
-Configure miss: os2.h
-Configure miss: create_area
-Configure miss: sendfilev in -lsendfile
-Configure miss: send_file
-Configure miss: sendfilev
-Configure miss: _getch
-Configure miss: getpassphrase
-Configure miss: whether sigwait takes one argument
-Configure miss: ByteOrder.h usability
-Configure miss: ByteOrder.h presence
 Configure miss: ByteOrder.h
-Configure miss: conio.h usability
-Configure miss: conio.h presence
-Configure miss: conio.h
-Configure miss: dir.h usability
-Configure miss: dir.h presence
-Configure miss: dir.h
-Configure miss: mach-o/dyld.h usability
-Configure miss: mach-o/dyld.h presence
-Configure miss: mach-o/dyld.h
-Configure miss: osreldate.h usability
-Configure miss: osreldate.h presence
-Configure miss: osreldate.h
-Configure miss: process.h usability
-Configure miss: process.h presence
-Configure miss: sysapi.h usability
-Configure miss: sysapi.h presence
-Configure miss: sysapi.h
-Configure miss: sysgtime.h usability
-Configure miss: sysgtime.h presence
-Configure miss: sysgtime.h
-Configure miss: tpfeq.h usability
-Configure miss: tpfeq.h presence
-Configure miss: tpfeq.h
-Configure miss: tpfio.h usability
-Configure miss: tpfio.h presence
-Configure miss: tpfio.h
-Configure miss: unix.h usability
-Configure miss: unix.h presence
-Configure miss: unix.h
-Configure miss: winsock2.h usability
-Configure miss: winsock2.h presence
-Configure miss: netinet/sctp.h usability
-Configure miss: netinet/sctp.h presence
-Configure miss: netinet/sctp.h
-Configure miss: netinet/sctp_uio.h usability
-Configure miss: netinet/sctp_uio.h presence
-Configure miss: netinet/sctp_uio.h
-Configure miss: sys/syslimits.h usability
-Configure miss: sys/syslimits.h presence
-Configure miss: sys/syslimits.h
-Configure miss: strtoi
-Configure miss: OS.h usability
-Configure miss: OS.h presence
+Configure miss: ByteOrder.h
+Configure miss: ByteOrder.h presence
+Configure miss: ByteOrder.h presence
+Configure miss: ByteOrder.h usability
+Configure miss: ByteOrder.h usability
+Configure miss: CFLAGS needed for pthreads
+Configure miss: CFLAGS needed for pthreads
 Configure miss: OS.h
-Configure miss: create_sem
+Configure miss: OS.h
+Configure miss: OS.h presence
+Configure miss: OS.h presence
+Configure miss: OS.h usability
+Configure miss: OS.h usability
+Configure miss: SO_ACCEPTFILTER in sys/socket.h
+Configure miss: SO_ACCEPTFILTER in sys/socket.h
+Configure miss: TCP_NOPUSH in netinet/tcp.h
+Configure miss: TCP_NOPUSH in netinet/tcp.h
+Configure miss: _getch
+Configure miss: _getch
+Configure miss: acquire_sem
 Configure miss: acquire_sem
 Configure miss: acquire_sem_etc
-Configure miss: union semun in sys/sem.h
-Configure miss: if fcntl returns EACCES when F_SETLK is already held
-Configure miss: if all interprocess locks affect threads
+Configure miss: acquire_sem_etc
+Configure miss: asio -> message queue support
+Configure miss: asio -> message queue support
+Configure miss: conio.h
+Configure miss: conio.h
+Configure miss: conio.h presence
+Configure miss: conio.h presence
+Configure miss: conio.h usability
+Configure miss: conio.h usability
+Configure miss: create_area
+Configure miss: create_area
+Configure miss: create_sem
+Configure miss: create_sem
+Configure miss: dir.h
+Configure miss: dir.h
+Configure miss: dir.h presence
+Configure miss: dir.h presence
+Configure miss: dir.h usability
+Configure miss: dir.h usability
+Configure miss: gethostbyaddr in -lc_r
+Configure miss: gethostbyaddr in -lc_r
+Configure miss: gethostbyname in -lc_r
+Configure miss: gethostbyname in -lc_r
+Configure miss: getpassphrase
+Configure miss: getpassphrase
+Configure miss: getservbyname in -lc_r
+Configure miss: getservbyname in -lc_r
+Configure miss: if O_NONBLOCK setting is inherited from listening sockets
+Configure miss: if O_NONBLOCK setting is inherited from listening sockets
+Configure miss: if POSIX sems affect threads in the same process
 Configure miss: if POSIX sems affect threads in the same process
 Configure miss: if SysV sems affect threads in the same process
+Configure miss: if SysV sems affect threads in the same process
+Configure miss: if all interprocess locks affect threads
+Configure miss: if all interprocess locks affect threads
 Configure miss: if fcntl locks affect threads in the same process
+Configure miss: if fcntl locks affect threads in the same process
+Configure miss: if fcntl returns EACCES when F_SETLK is already held
+Configure miss: if fcntl returns EACCES when F_SETLK is already held
 Configure miss: if flock locks affect threads in the same process
-Configure miss: struct stat.st_atimensec
-Configure miss: struct stat.st_ctimensec
-Configure miss: struct stat.st_atime_n
-Configure miss: struct stat.st_ctime_n
-Configure miss: struct stat.st_mtime_n
-Configure miss: uuid.h usability
-Configure miss: uuid.h presence
-Configure miss: uuid.h
-Configure miss: library containing uuid_create
-Configure miss: uuid_create
-Configure miss: if O_NONBLOCK setting is inherited from listening sockets
-Configure miss: TCP_NOPUSH in netinet/tcp.h
-Configure miss: SO_ACCEPTFILTER in sys/socket.h
-Configure miss: whether SCTP is supported
-Configure miss: set_h_errno
-Configure miss: whether system uses EBCDIC
-Configure miss: whether to enable -D_LARGEFILE64_SOURCE
-Configure miss: main in -ltruerand
-Configure miss: whether pthread_getspecific takes two arguments
-Configure miss: whether pthread_attr_getdetachstate takes one argument
-Configure miss: gethostbyname in -lc_r
-Configure miss: gethostbyaddr in -lc_r
-Configure miss: getservbyname in -lc_r
-Configure miss: port_create
-Configure miss: asio -> message queue support
-Configure miss: sys/mutex.h usability
-Configure miss: sys/mutex.h presence
-Configure miss: sys/mutex.h
-Configure miss: kernel/OS.h usability
-Configure miss: kernel/OS.h presence
+Configure miss: if flock locks affect threads in the same process
 Configure miss: kernel/OS.h
-Configure miss: os2.h usability
-Configure miss: os2.h presence
+Configure miss: kernel/OS.h
+Configure miss: kernel/OS.h presence
+Configure miss: kernel/OS.h presence
+Configure miss: kernel/OS.h usability
+Configure miss: kernel/OS.h usability
+Configure miss: library containing uuid_create
+Configure miss: library containing uuid_create
+Configure miss: mach-o/dyld.h
+Configure miss: mach-o/dyld.h
+Configure miss: mach-o/dyld.h presence
+Configure miss: mach-o/dyld.h presence
+Configure miss: mach-o/dyld.h usability
+Configure miss: mach-o/dyld.h usability
+Configure miss: main in -ltruerand
+Configure miss: main in -ltruerand
+Configure miss: netinet/sctp.h
+Configure miss: netinet/sctp.h
+Configure miss: netinet/sctp.h presence
+Configure miss: netinet/sctp.h presence
+Configure miss: netinet/sctp.h usability
+Configure miss: netinet/sctp.h usability
+Configure miss: netinet/sctp_uio.h
+Configure miss: netinet/sctp_uio.h
+Configure miss: netinet/sctp_uio.h presence
+Configure miss: netinet/sctp_uio.h presence
+Configure miss: netinet/sctp_uio.h usability
+Configure miss: netinet/sctp_uio.h usability
 Configure miss: os2.h
-Configure miss: create_area
-Configure miss: sendfilev in -lsendfile
+Configure miss: os2.h
+Configure miss: os2.h presence
+Configure miss: os2.h presence
+Configure miss: os2.h usability
+Configure miss: os2.h usability
+Configure miss: osreldate.h
+Configure miss: osreldate.h
+Configure miss: osreldate.h presence
+Configure miss: osreldate.h presence
+Configure miss: osreldate.h usability
+Configure miss: osreldate.h usability
+Configure miss: port_create
+Configure miss: port_create
+Configure miss: process.h presence
+Configure miss: process.h presence
+Configure miss: process.h usability
+Configure miss: process.h usability
+Configure miss: pthread_yield
+Configure miss: pthread_yield
+Configure miss: send_file
 Configure miss: send_file
 Configure miss: sendfilev
-Configure miss: _getch
-Configure miss: getpassphrase
-Configure miss: whether sigwait takes one argument
-Configure miss: ByteOrder.h usability
-Configure miss: ByteOrder.h presence
-Configure miss: ByteOrder.h
-Configure miss: conio.h usability
-Configure miss: conio.h presence
-Configure miss: conio.h
-Configure miss: dir.h usability
-Configure miss: dir.h presence
-Configure miss: dir.h
-Configure miss: mach-o/dyld.h usability
-Configure miss: mach-o/dyld.h presence
-Configure miss: mach-o/dyld.h
-Configure miss: osreldate.h usability
-Configure miss: osreldate.h presence
-Configure miss: osreldate.h
-Configure miss: process.h usability
-Configure miss: process.h presence
-Configure miss: sysapi.h usability
-Configure miss: sysapi.h presence
-Configure miss: sysapi.h
-Configure miss: sysgtime.h usability
-Configure miss: sysgtime.h presence
-Configure miss: sysgtime.h
-Configure miss: tpfeq.h usability
-Configure miss: tpfeq.h presence
-Configure miss: tpfeq.h
-Configure miss: tpfio.h usability
-Configure miss: tpfio.h presence
-Configure miss: tpfio.h
-Configure miss: unix.h usability
-Configure miss: unix.h presence
-Configure miss: unix.h
-Configure miss: winsock2.h usability
-Configure miss: winsock2.h presence
-Configure miss: netinet/sctp.h usability
-Configure miss: netinet/sctp.h presence
-Configure miss: netinet/sctp.h
-Configure miss: netinet/sctp_uio.h usability
-Configure miss: netinet/sctp_uio.h presence
-Configure miss: netinet/sctp_uio.h
-Configure miss: sys/syslimits.h usability
-Configure miss: sys/syslimits.h presence
-Configure miss: sys/syslimits.h
-Configure miss: strtoi
-Configure miss: OS.h usability
-Configure miss: OS.h presence
-Configure miss: OS.h
-Configure miss: create_sem
-Configure miss: acquire_sem
-Configure miss: acquire_sem_etc
-Configure miss: union semun in sys/sem.h
-Configure miss: if fcntl returns EACCES when F_SETLK is already held
-Configure miss: if all interprocess locks affect threads
-Configure miss: if POSIX sems affect threads in the same process
-Configure miss: if SysV sems affect threads in the same process
-Configure miss: if fcntl locks affect threads in the same process
-Configure miss: if flock locks affect threads in the same process
-Configure miss: struct stat.st_atimensec
-Configure miss: struct stat.st_ctimensec
-Configure miss: struct stat.st_atime_n
-Configure miss: struct stat.st_ctime_n
-Configure miss: struct stat.st_mtime_n
-Configure miss: uuid.h usability
-Configure miss: uuid.h presence
-Configure miss: uuid.h
-Configure miss: library containing uuid_create
-Configure miss: uuid_create
-Configure miss: if O_NONBLOCK setting is inherited from listening sockets
-Configure miss: TCP_NOPUSH in netinet/tcp.h
-Configure miss: SO_ACCEPTFILTER in sys/socket.h
-Configure miss: whether SCTP is supported
+Configure miss: sendfilev
+Configure miss: sendfilev in -lsendfile
+Configure miss: sendfilev in -lsendfile
 Configure miss: set_h_errno
+Configure miss: set_h_errno
+Configure miss: strtoi
+Configure miss: strtoi
+Configure miss: struct stat.st_atime_n
+Configure miss: struct stat.st_atime_n
+Configure miss: struct stat.st_atimensec
+Configure miss: struct stat.st_atimensec
+Configure miss: struct stat.st_ctime_n
+Configure miss: struct stat.st_ctime_n
+Configure miss: struct stat.st_ctimensec
+Configure miss: struct stat.st_ctimensec
+Configure miss: struct stat.st_mtime_n
+Configure miss: struct stat.st_mtime_n
+Configure miss: sys/mutex.h
+Configure miss: sys/mutex.h
+Configure miss: sys/mutex.h presence
+Configure miss: sys/mutex.h presence
+Configure miss: sys/mutex.h usability
+Configure miss: sys/mutex.h usability
+Configure miss: sys/sysctl.h
+Configure miss: sys/sysctl.h
+Configure miss: sys/sysctl.h presence
+Configure miss: sys/sysctl.h presence
+Configure miss: sys/sysctl.h usability
+Configure miss: sys/sysctl.h usability
+Configure miss: sys/syslimits.h
+Configure miss: sys/syslimits.h
+Configure miss: sys/syslimits.h presence
+Configure miss: sys/syslimits.h presence
+Configure miss: sys/syslimits.h usability
+Configure miss: sys/syslimits.h usability
+Configure miss: sysapi.h
+Configure miss: sysapi.h
+Configure miss: sysapi.h presence
+Configure miss: sysapi.h presence
+Configure miss: sysapi.h usability
+Configure miss: sysapi.h usability
+Configure miss: sysgtime.h
+Configure miss: sysgtime.h
+Configure miss: sysgtime.h presence
+Configure miss: sysgtime.h presence
+Configure miss: sysgtime.h usability
+Configure miss: sysgtime.h usability
+Configure miss: tpfeq.h
+Configure miss: tpfeq.h
+Configure miss: tpfeq.h presence
+Configure miss: tpfeq.h presence
+Configure miss: tpfeq.h usability
+Configure miss: tpfeq.h usability
+Configure miss: tpfio.h
+Configure miss: tpfio.h
+Configure miss: tpfio.h presence
+Configure miss: tpfio.h presence
+Configure miss: tpfio.h usability
+Configure miss: tpfio.h usability
+Configure miss: union semun in sys/sem.h
+Configure miss: union semun in sys/sem.h
+Configure miss: unix.h
+Configure miss: unix.h
+Configure miss: unix.h presence
+Configure miss: unix.h presence
+Configure miss: unix.h usability
+Configure miss: unix.h usability
+Configure miss: uuid.h
+Configure miss: uuid.h
+Configure miss: uuid.h presence
+Configure miss: uuid.h presence
+Configure miss: uuid.h usability
+Configure miss: uuid.h usability
+Configure miss: uuid_create
+Configure miss: uuid_create
+Configure miss: whether SCTP is supported
+Configure miss: whether SCTP is supported
+Configure miss: whether pthread_attr_getdetachstate takes one argument
+Configure miss: whether pthread_attr_getdetachstate takes one argument
+Configure miss: whether pthread_getspecific takes two arguments
+Configure miss: whether pthread_getspecific takes two arguments
+Configure miss: whether sigwait takes one argument
+Configure miss: whether sigwait takes one argument
+Configure miss: whether sys_siglist is declared
+Configure miss: whether sys_siglist is declared
+Configure miss: whether system uses EBCDIC
+Configure miss: whether system uses EBCDIC
+Configure miss: whether to enable -D_LARGEFILE64_SOURCE
+Configure miss: whether to enable -D_LARGEFILE64_SOURCE
+Configure miss: winsock2.h presence
+Configure miss: winsock2.h presence
+Configure miss: winsock2.h usability
+Configure miss: winsock2.h usability

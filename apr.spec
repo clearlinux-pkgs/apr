@@ -6,7 +6,7 @@
 #
 Name     : apr
 Version  : 1.7.0
-Release  : 34
+Release  : 35
 URL      : http://www.apache.org/dist/apr/apr-1.7.0.tar.gz
 Source0  : http://www.apache.org/dist/apr/apr-1.7.0.tar.gz
 Source1  : http://www.apache.org/dist/apr/apr-1.7.0.tar.gz.asc
@@ -15,6 +15,7 @@ Group    : Development/Tools
 License  : Apache-2.0 ISC
 Requires: apr-bin = %{version}-%{release}
 Requires: apr-data = %{version}-%{release}
+Requires: apr-filemap = %{version}-%{release}
 Requires: apr-lib = %{version}-%{release}
 Requires: apr-license = %{version}-%{release}
 BuildRequires : buildreq-cmake
@@ -34,6 +35,7 @@ Summary: bin components for the apr package.
 Group: Binaries
 Requires: apr-data = %{version}-%{release}
 Requires: apr-license = %{version}-%{release}
+Requires: apr-filemap = %{version}-%{release}
 
 %description bin
 bin components for the apr package.
@@ -60,11 +62,20 @@ Requires: apr = %{version}-%{release}
 dev components for the apr package.
 
 
+%package filemap
+Summary: filemap components for the apr package.
+Group: Default
+
+%description filemap
+filemap components for the apr package.
+
+
 %package lib
 Summary: lib components for the apr package.
 Group: Libraries
 Requires: apr-data = %{version}-%{release}
 Requires: apr-license = %{version}-%{release}
+Requires: apr-filemap = %{version}-%{release}
 
 %description lib
 lib components for the apr package.
@@ -91,25 +102,25 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1610134551
+export SOURCE_DATE_EPOCH=1633736338
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -falign-functions=32 -ffat-lto-objects -flto=4 -fno-math-errno -fno-semantic-interposition -fno-trapping-math "
-export FCFLAGS="$FFLAGS -O3 -falign-functions=32 -ffat-lto-objects -flto=4 -fno-math-errno -fno-semantic-interposition -fno-trapping-math "
-export FFLAGS="$FFLAGS -O3 -falign-functions=32 -ffat-lto-objects -flto=4 -fno-math-errno -fno-semantic-interposition -fno-trapping-math "
-export CXXFLAGS="$CXXFLAGS -O3 -falign-functions=32 -ffat-lto-objects -flto=4 -fno-math-errno -fno-semantic-interposition -fno-trapping-math "
+export CFLAGS="$CFLAGS -O3 -Ofast -falign-functions=32 -ffat-lto-objects -flto=auto -fno-semantic-interposition -mprefer-vector-width=256 "
+export FCFLAGS="$FFLAGS -O3 -Ofast -falign-functions=32 -ffat-lto-objects -flto=auto -fno-semantic-interposition -mprefer-vector-width=256 "
+export FFLAGS="$FFLAGS -O3 -Ofast -falign-functions=32 -ffat-lto-objects -flto=auto -fno-semantic-interposition -mprefer-vector-width=256 "
+export CXXFLAGS="$CXXFLAGS -O3 -Ofast -falign-functions=32 -ffat-lto-objects -flto=auto -fno-semantic-interposition -mprefer-vector-width=256 "
 %configure --disable-static --enable-nonportable-atomics   --enable-threads --with-devrandom=/dev/urandom
 make  %{?_smp_mflags}
 
 unset PKG_CONFIG_PATH
 pushd ../buildavx2/
-export CFLAGS="$CFLAGS -m64 -march=haswell"
-export CXXFLAGS="$CXXFLAGS -m64 -march=haswell"
-export FFLAGS="$FFLAGS -m64 -march=haswell"
-export FCFLAGS="$FCFLAGS -m64 -march=haswell"
-export LDFLAGS="$LDFLAGS -m64 -march=haswell"
+export CFLAGS="$CFLAGS -m64 -march=x86-64-v3"
+export CXXFLAGS="$CXXFLAGS -m64 -march=x86-64-v3"
+export FFLAGS="$FFLAGS -m64 -march=x86-64-v3"
+export FCFLAGS="$FCFLAGS -m64 -march=x86-64-v3"
+export LDFLAGS="$LDFLAGS -m64 -march=x86-64-v3"
 %configure --disable-static --enable-nonportable-atomics   --enable-threads --with-devrandom=/dev/urandom
 make  %{?_smp_mflags}
 popd
@@ -121,13 +132,14 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make TEST_VERBOSE=1 test || :
 
 %install
-export SOURCE_DATE_EPOCH=1610134551
+export SOURCE_DATE_EPOCH=1633736338
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/apr
 cp %{_builddir}/apr-1.7.0/LICENSE %{buildroot}/usr/share/package-licenses/apr/2eae3e0a27a2e49e86a350c94513de0ddb1d2c98
 cp %{_builddir}/apr-1.7.0/NOTICE %{buildroot}/usr/share/package-licenses/apr/5d4e4cddd998a3f6e4603d6774c0cf766b317f26
 pushd ../buildavx2/
-%make_install_avx2
+%make_install_v3
+/usr/bin/elf-move.py avx2 %{buildroot}-v3 %{buildroot}/usr/share/clear/optimized-elf/ %{buildroot}/usr/share/clear/filemap/filemap-%{name}
 popd
 %make_install
 
@@ -190,16 +202,18 @@ popd
 /usr/include/apr_user.h
 /usr/include/apr_version.h
 /usr/include/apr_want.h
-/usr/lib64/haswell/libapr-1.so
 /usr/lib64/libapr-1.so
 /usr/lib64/pkgconfig/apr-1.pc
 
+%files filemap
+%defattr(-,root,root,-)
+/usr/share/clear/filemap/filemap-apr
+
 %files lib
 %defattr(-,root,root,-)
-/usr/lib64/haswell/libapr-1.so.0
-/usr/lib64/haswell/libapr-1.so.0.7.0
 /usr/lib64/libapr-1.so.0
 /usr/lib64/libapr-1.so.0.7.0
+/usr/share/clear/optimized-elf/lib*
 
 %files license
 %defattr(0644,root,root,0755)
