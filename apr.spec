@@ -6,7 +6,7 @@
 #
 Name     : apr
 Version  : 1.7.0
-Release  : 41
+Release  : 42
 URL      : http://www.apache.org/dist/apr/apr-1.7.0.tar.gz
 Source0  : http://www.apache.org/dist/apr/apr-1.7.0.tar.gz
 Source1  : http://www.apache.org/dist/apr/apr-1.7.0.tar.gz.asc
