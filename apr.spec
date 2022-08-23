@@ -6,7 +6,7 @@
 #
 Name     : apr
 Version  : 1.7.0
-Release  : 44
+Release  : 45
 URL      : http://www.apache.org/dist/apr/apr-1.7.0.tar.gz
 Source0  : http://www.apache.org/dist/apr/apr-1.7.0.tar.gz
 Source1  : http://www.apache.org/dist/apr/apr-1.7.0.tar.gz.asc
@@ -91,7 +91,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1656089634
+export SOURCE_DATE_EPOCH=1661264808
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -121,11 +121,11 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make TEST_VERBOSE=1 test || :
 
 %install
-export SOURCE_DATE_EPOCH=1656089634
+export SOURCE_DATE_EPOCH=1661264808
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/apr
-cp %{_builddir}/apr-1.7.0/LICENSE %{buildroot}/usr/share/package-licenses/apr/2eae3e0a27a2e49e86a350c94513de0ddb1d2c98
-cp %{_builddir}/apr-1.7.0/NOTICE %{buildroot}/usr/share/package-licenses/apr/5d4e4cddd998a3f6e4603d6774c0cf766b317f26
+cp %{_builddir}/apr-%{version}/LICENSE %{buildroot}/usr/share/package-licenses/apr/2eae3e0a27a2e49e86a350c94513de0ddb1d2c98
+cp %{_builddir}/apr-%{version}/NOTICE %{buildroot}/usr/share/package-licenses/apr/5d4e4cddd998a3f6e4603d6774c0cf766b317f26
 pushd ../buildavx2/
 %make_install_v3
 popd
@@ -135,6 +135,7 @@ popd
 %files
 %defattr(-,root,root,-)
 /usr/lib64/apr.exp
+/usr/lib64/glibc-hwcaps/x86-64-v3/apr.exp
 
 %files bin
 %defattr(-,root,root,-)
@@ -191,12 +192,12 @@ popd
 /usr/include/apr_user.h
 /usr/include/apr_version.h
 /usr/include/apr_want.h
+/usr/lib64/glibc-hwcaps/x86-64-v3/libapr-1.so
 /usr/lib64/libapr-1.so
 /usr/lib64/pkgconfig/apr-1.pc
 
 %files lib
 %defattr(-,root,root,-)
-/usr/lib64/glibc-hwcaps/x86-64-v3/libapr-1.so
 /usr/lib64/glibc-hwcaps/x86-64-v3/libapr-1.so.0
 /usr/lib64/glibc-hwcaps/x86-64-v3/libapr-1.so.0.7.0
 /usr/lib64/libapr-1.so.0
