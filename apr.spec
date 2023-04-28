@@ -7,7 +7,7 @@
 #
 Name     : apr
 Version  : 1.7.3
-Release  : 50
+Release  : 51
 URL      : https://www.apache.org/dist/apr/apr-1.7.3.tar.gz
 Source0  : https://www.apache.org/dist/apr/apr-1.7.3.tar.gz
 Source1  : https://www.apache.org/dist/apr/apr-1.7.3.tar.gz.asc
@@ -94,7 +94,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1682643139
+export SOURCE_DATE_EPOCH=1682700103
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -124,7 +124,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make TEST_VERBOSE=1 test || :
 
 %install
-export SOURCE_DATE_EPOCH=1682643139
+export SOURCE_DATE_EPOCH=1682700103
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/apr
 cp %{_builddir}/apr-%{version}/LICENSE %{buildroot}/usr/share/package-licenses/apr/2eae3e0a27a2e49e86a350c94513de0ddb1d2c98 || :
@@ -137,7 +137,6 @@ popd
 %files
 %defattr(-,root,root,-)
 /usr/lib64/apr.exp
-/usr/lib64/glibc-hwcaps/x86-64-v3/apr.exp
 
 %files bin
 %defattr(-,root,root,-)
@@ -153,6 +152,7 @@ popd
 
 %files dev
 %defattr(-,root,root,-)
+/V3/usr/lib64/libapr-1.so
 /usr/include/apr.h
 /usr/include/apr_allocator.h
 /usr/include/apr_atomic.h
@@ -194,14 +194,13 @@ popd
 /usr/include/apr_user.h
 /usr/include/apr_version.h
 /usr/include/apr_want.h
-/usr/lib64/glibc-hwcaps/x86-64-v3/libapr-1.so
 /usr/lib64/libapr-1.so
 /usr/lib64/pkgconfig/apr-1.pc
 
 %files lib
 %defattr(-,root,root,-)
-/usr/lib64/glibc-hwcaps/x86-64-v3/libapr-1.so.0
-/usr/lib64/glibc-hwcaps/x86-64-v3/libapr-1.so.0.7.3
+/V3/usr/lib64/libapr-1.so.0
+/V3/usr/lib64/libapr-1.so.0.7.3
 /usr/lib64/libapr-1.so.0
 /usr/lib64/libapr-1.so.0.7.3
 
